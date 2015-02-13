@@ -1,0 +1,86 @@
+
+body {
+	font-family: 'Neuton', serif;
+	font-size: 19px;
+	padding-top: 0;
+}
+
+a {
+	color: #78b2e5;
+}
+
+a:hover {
+	color: #4d86b8;
+}
+
+p {
+	padding-bottom: 15px;
+}
+
+ul {
+	padding-left: 0;
+}
+
+img {
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+.jumbotron {
+	background: none;
+	color: black;
+	padding-bottom: 20px;
+	padding-top: 0;
+	text-align: center;
+}
+
+.jumbotron h1 {
+	margin-top: 0;
+}
+
+.jumbotron p {
+	font-size: 28px;
+	line-height: 1;
+}
+
+.jumbotron p small {
+	font-size: 60%;
+}
+
+.jumbotron p.lead a {
+	color: #FFF;
+}
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+.btn-success {
+	background-color: #DDD;
+	border-color: #CCC;
+	color: #ba1800;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  background-color: #FFF;
+  border-color: #b1aeae;
+  color: #ba1800;
+}
+
+@media (max-width: 500px) {
+	.aboutjs img {
+		display: block;
+		padding-right: 0;
+		width: 100%;
+	}
+}
