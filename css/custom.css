@@ -39,6 +39,10 @@ img {
 	text-align: right;
 }
 
+.info a {
+	margin-left: 25px;
+}
+
 .orgs {
 	border-top: 1px solid #e0e0e0;
 	font-size: 20px;
