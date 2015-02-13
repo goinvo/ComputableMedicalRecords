@@ -45,22 +45,26 @@ img {
 
 .orgs {
 	border-top: 1px solid #e0e0e0;
-	font-size: 40%;
 	margin-top: 40px;
 	padding-top: 10px;
 }
 
 h1 {
-	font-size: 140%;
+	font-size: 115%;
 	margin-top: 0;
 	margin-bottom: 50px;
 }
 
 h2 {
+	font-size: 60%;
+}
+
+h3 {
 	font-size: 40%;
 }
 
 p {
+	font-size: 40%;
 	line-height: 1;
 }
 
