@@ -34,7 +34,7 @@ img {
 
 .info {
 	border-bottom: 1px solid #e0e0e0;
-	font-size: 20px;
+	font-size: 40%;
 	margin-bottom: 30px;
 	text-align: right;
 }
@@ -45,19 +45,19 @@ img {
 
 .orgs {
 	border-top: 1px solid #e0e0e0;
-	font-size: 20px;
+	font-size: 40%;
 	margin-top: 40px;
 	padding-top: 10px;
 }
 
 h1 {
-	font-size: 80px;
+	font-size: 140%;
 	margin-top: 0;
 	margin-bottom: 50px;
 }
 
 h2 {
-	font-size: 16px;
+	font-size: 40%;
 }
 
 p {
@@ -65,7 +65,7 @@ p {
 }
 
 li {
-	font-size: 28px;
+	font-size: 60%;
 }
 
 .btn-success {
