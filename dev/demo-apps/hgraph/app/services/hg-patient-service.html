@@ -1,0 +1,45 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="/bower_components/core-signals/core-signals.html">
+
+<polymer-element name="hg-patient-service" attributes="patient">
+	<template>
+		<core-signals on-core-signal-hg-load-patient-data="{{loadPatientResponder}}"></core-signals>
+		<style>
+		:host {
+			display: none;
+		}
+		</style>
+		<core-ajax 
+			auto
+			url="{{url}}"
+			handleAs="json"
+			response="{{response}}"
+			></core-ajax>
+	</template>
+	<script>
+		Polymer('hg-patient-service', {
+			created: function() {
+				this.patient = null;
+				this.url = "http://localhost:12100/patient.juhan.json";
+			},
+			responseChanged: function(oldValue) {
+				// Make a copy of the loaded data
+				my = this;
+				this.patient = this.response;
+				this.fire('core-signal', {name: "hg-new-patient-data", data: my.patient});
+				//console.log(this.patient);
+			},
+			loadPatientResponder: function(e, data, sender) {
+				var toLoad = data.toLowerCase();
+				var url = "http://localhost:12100/patient." + toLoad + ".json";
+				this.url = url;
+			},
+			// setFavorite: function(uid, isFavorite) {
+			// 	// no service backend, just log the change
+			// 	console.log('Favorite changed: ' + uid + ", now: " + isFavorite);
+			// }
+		});
+	</script>
+</polymer-element>
+

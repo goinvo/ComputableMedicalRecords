@@ -1,0 +1,93 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-signals/core-signals.html">
+<link rel="import" href="/components/hg-address.html">
+
+<polymer-element name="hg-patient-card">
+	<template>
+		<core-signals on-core-signal-hg-new-patient-data="{{patientDataResponder}}"></core-signals>
+		<div horizontal center-justified layout>
+			<div vertical layout>
+				<div class="hg-patient-card-header">
+					<h1>{{patient | fullname}}</h1>
+					<hg-address address="{{patient.biographical_data.address}}"></hg-address>
+				</div>
+				<div class="hg-patient-card-info" horizontal layout>
+					<div>
+						<p><span>Height</span> {{patient.height.body_height.value}}{{patient.height.body_height.unit}}</p>
+						<p><span>Weight</span> {{patient.weight.body_weight.value}}{{patient.weight.body_weight.unit}}</p>
+						<p><span>Date of Birth</span> {{patient.biographical_data.date_of_birth | formatDate}}</p>
+					</div>
+					<div>
+						<p><span>Blood Type</span> {{patient.biographical_data.blood_type}}</p>
+						<p><span>Vision</span> {{patient.biographical_data.visual_acuity}}</p>
+						<p><span>Allergies</span> {{patient.biographical_data.allergies | listItems}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<style>
+		:host {
+			font-size: 1.2rem;
+		}
+		h1 {
+			margin-bottom: 0.5rem;
+		}
+		.hg-patient-card-header {
+			text-align: center;
+		}
+		.hg-patient-card-info div {
+			padding: 10px 20px;
+		}
+		.hg-patient-card-info span {
+			font-weight: 600;
+			color: #888;
+			display: block;
+			font-size: 0.8rem;
+			padding: 0 0 0.2rem 0;
+		}
+		</style>
+	</template>
+	<script>
+		Polymer({
+			created: function() {
+				this.patient = null;
+			},
+			patientDataResponder: function(e, data, sender) {
+				this.patient = data;
+				//console.log(data);
+			},
+			fullname: function() {
+				if (this.patient != null) {
+					var n = this.patient.biographical_data.name;
+					var nArray = [];
+					var f = n.first_name === undefined ? "" : nArray.push(n.first_name);
+					var m = n.middle_name === undefined ? "" : nArray.push(n.middle_name);
+					var l = n.last_name === undefined ? "" : nArray.push(n.last_name);
+					
+					return nArray.join(" ")
+				}
+				return ""
+			},
+			listItems: function(aList) {
+				if (this.patient != null) {	
+					if (aList.length == 0) {
+						return "None"
+					}
+					return aList.join(", ")
+				}
+				return ""
+			},
+			formatDate: function(aDate) {
+				if (this.patient != null) {	
+					var d = aDate.split("T");
+					return d[0]
+				}
+			}
+		});
+	</script>
+</polymer-element>
+
+
+
+

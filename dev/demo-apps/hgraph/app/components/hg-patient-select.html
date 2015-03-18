@@ -1,0 +1,26 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-signals/core-signals.html">
+
+<polymer-element name="hg-patient-select">
+	<template>
+		<div horizontal center-justified layout>
+			<select id="patient-list" value="{{current}}" on-change="{{selectionChanged}}">
+				<option>Juhan</option>
+				<option>Ben</option>
+			</select>
+	    </div>
+	</template>
+	<script>
+		Polymer('hg-patient-select', {
+			created: function() {
+				this.pid = null;
+			},
+			selectionChanged: function(e) {
+				// Make a copy of the loaded data
+				my = this;
+				this.pid = this.current;
+				this.fire('core-signal', {name: "hg-load-patient-data", data: my.pid});
+			}
+		});
+	</script>
+</polymer-element>

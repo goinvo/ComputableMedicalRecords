@@ -1,0 +1,32 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<polymer-element name="hg-address" attributes="address">
+	<template>
+		<div>
+			<template repeat="{{line in address.street}}">
+				<p>{{line}}</p>
+			</template>
+			<p>{{address.city}}, {{address.state}} {{address.code}}</p>
+		</div>
+		<style>
+		p {
+			margin:0;
+		}
+		</style>
+	</template>
+	<script>
+		Polymer({
+			created: function() {
+				this.address = null;
+			},
+			// patient: {
+			// 	address: {
+			// 		street: ["22 Surry Ln", "Apt C"]
+			// 	}
+			// },
+			ready: function() {
+		  		//...
+	  		}
+		});
+	</script>
+</polymer-element>

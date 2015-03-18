@@ -1,0 +1,48 @@
+{
+    "biographical_data": {
+        "name": {
+        	"first_name": "Juhan",
+        	"last_name": "Sonin"
+        },
+        "address": {
+            "street": ["22 Surry Rd"],
+            "city": "Arlington",
+            "state": "MA",
+            "code": "02476"
+        },
+        "blood_type": "A+",
+        "visual_acuity": "20/15",
+        "date_of_birth": "1972-03-01T00:00:00Z",
+        "allergies": []
+    },
+    "height": {
+		"body_height": {
+			"value": 70,
+			"unit": "in"
+		}
+    },
+	"weight": {
+	    "body_weight": {
+	        "value": 185,
+	        "unit": "lb"
+	    },
+	    "effective_time_frame": { 
+            "date_time": "2015-03-17T08:13:21Z" 
+        }
+	},
+	"blood_pressure": {
+		"systolic_blood_pressure": {
+			"value": 123,
+			"unit": "mmHg"
+		},
+		"diastolic_blood_pressure": {
+			"value": 71,
+			"unit": "mmHg"
+		},
+		"effective_time_frame": {
+			"date_time": "2015-03-10T17:01:35Z"
+		},
+		"position_during_measurement": "sitting",
+		"descriptive_statistic": "maximum"
+	}
+}

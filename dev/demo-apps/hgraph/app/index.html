@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>hGraph</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+	<script src="//use.typekit.net/ucr3hqa.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+	<script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+
+	<link rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<link rel="import" href="/services/hg-patient-service.html">
+	<link rel="import" href="/components/hg-patient-card.html">
+	<link rel="import" href="/components/hg-patient-select.html">
+	
+</head>
+
+<body>
+
+	<hg-patient-service id="patient-service" patient="{{patient}}" pid="{{pid}}"></hg-patient-service>
+
+	<hg-patient-card></hg-patient-card>
+	<hg-patient-select></hg-patient-select>
+
+
+
+
+
+
+
+</body>
+</html>
