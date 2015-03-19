@@ -11,7 +11,7 @@
 					<h1>{{patient | fullname}}</h1>
 					<hg-address address="{{patient.biographical_data.address}}"></hg-address>
 				</div>
-				<div class="hg-patient-card-info" horizontal layout>
+				<div class="hg-patient-card-info" horizontal center-justified layout>
 					<div>
 						<p><span>Height</span> {{patient.height.body_height.value}}{{patient.height.body_height.unit}}</p>
 						<p><span>Weight</span> {{patient.weight.body_weight.value}}{{patient.weight.body_weight.unit}}</p>
@@ -22,6 +22,10 @@
 						<p><span>Vision</span> {{patient.biographical_data.visual_acuity}}</p>
 						<p><span>Allergies</span> {{patient.biographical_data.allergies | listItems}}</p>
 					</div>
+				</div>
+				<div class="hg-patient-card-url">
+					<p><a href="{{loadedFrom}}">{{loadedFrom}}</a></p>
+					<p><a href="{{SCHEMA_URL}}/cmr/patient.json">Schema File (validation)</a></p>
 				</div>
 			</div>
 		</div>
@@ -46,16 +50,23 @@
 			font-size: 0.8rem;
 			padding: 0 0 0.2rem 0;
 		}
+		.hg-patient-card-url p { text-align: center; margin: 0; }
+		.hg-patient-card-url a {
+			color: #999;
+			font-size: 0.8rem;
+		}
 		</style>
 	</template>
 	<script>
 		Polymer({
 			created: function() {
 				this.patient = null;
+				this.loadedFrom = "";
 			},
 			patientDataResponder: function(e, data, sender) {
 				this.patient = data;
-				//console.log(data);
+				this.loadedFrom = document.querySelectorAll('html /deep/ select')[0].value;
+				
 			},
 			fullname: function() {
 				if (this.patient != null) {

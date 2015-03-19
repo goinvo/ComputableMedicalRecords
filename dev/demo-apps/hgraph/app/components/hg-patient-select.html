@@ -2,11 +2,11 @@
 <link rel="import" href="/bower_components/core-signals/core-signals.html">
 
 <polymer-element name="hg-patient-select">
-	<template>
+	<template id="hg-patient-select">
 		<div horizontal center-justified layout>
 			<select id="patient-list" value="{{current}}" on-change="{{selectionChanged}}">
-				<option>Juhan</option>
-				<option>Ben</option>
+				<option value="{{DATA_URL}}/patient.juhan.json">Juhan</option>
+				<option value="{{DATA_URL}}/patient.ben.json">Ben</option>
 			</select>
 	    </div>
 	</template>
@@ -14,6 +14,7 @@
 		Polymer('hg-patient-select', {
 			created: function() {
 				this.pid = null;
+				this.current = "{{DATA_URL}}/patient.juhan.json";
 			},
 			selectionChanged: function(e) {
 				// Make a copy of the loaded data

@@ -21,7 +21,7 @@
 		Polymer('hg-patient-service', {
 			created: function() {
 				this.patient = null;
-				this.url = "http://localhost:12100/patient.juhan.json";
+				this.url = "{{DATA_URL}}/patient.juhan.json";
 			},
 			responseChanged: function(oldValue) {
 				// Make a copy of the loaded data
@@ -31,9 +31,7 @@
 				//console.log(this.patient);
 			},
 			loadPatientResponder: function(e, data, sender) {
-				var toLoad = data.toLowerCase();
-				var url = "http://localhost:12100/patient." + toLoad + ".json";
-				this.url = url;
+				this.url = data;
 			},
 			// setFavorite: function(uid, isFavorite) {
 			// 	// no service backend, just log the change
