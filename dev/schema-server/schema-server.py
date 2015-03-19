@@ -55,7 +55,7 @@ app = Flask(__name__, static_url_path=SERVER_BASE_PATH)
 @app.route('/<path:filename>')
 @crossdomain(origin='*')
 def send_schema(filename):
-    return send_from_directory('schema', filename)
+    return send_from_directory(os.path.join(SERVER_BASE_PATH, 'schema'), filename)
 
 if __name__ == "__main__":
     app.run(debug={{DEBUG}}, host="{{SERVER_HOST}}", port=12000)

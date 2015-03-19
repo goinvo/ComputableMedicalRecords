@@ -56,7 +56,7 @@ app = Flask(__name__, static_url_path=SERVER_BASE_PATH)
 @app.route('/<path:filename>')
 @crossdomain(origin='*')
 def send_schema(filename):
-    return send_from_directory('json', filename)
+    return send_from_directory(os.path.join(SERVER_BASE_PATH, 'json'), filename)
 
 
 if __name__ == "__main__":

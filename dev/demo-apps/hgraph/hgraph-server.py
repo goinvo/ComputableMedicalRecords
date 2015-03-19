@@ -14,7 +14,7 @@ def send_index():
 
 @app.route('/<path:filename>')
 def send_page(filename):
-    return send_from_directory('app', filename)
+    return send_from_directory(os.path.join(SERVER_BASE_PATH, 'app'), filename)
 
 if __name__ == "__main__":
     app.run(debug={{DEBUG}}, host="{{SERVER_HOST}}", port=12200)
