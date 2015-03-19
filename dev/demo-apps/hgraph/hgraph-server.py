@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path=SERVER_BASE_PATH)
 
 @app.route('/')
 def send_index():
-    return send_from_directory('app', 'index.html')
+    return send_from_directory(os.path.join(SERVER_BASE_PATH, 'app'), 'index.html')
 
 
 @app.route('/<path:filename>')
