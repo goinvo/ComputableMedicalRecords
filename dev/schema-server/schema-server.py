@@ -58,4 +58,4 @@ def send_schema(filename):
     return send_from_directory('schema', filename)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=12000)
+    app.run(debug={{DEBUG}}, host="{{SERVER_HOST}}", port=12000)

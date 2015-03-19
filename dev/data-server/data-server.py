@@ -60,7 +60,7 @@ def send_schema(filename):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=12100)
+    app.run(debug={{DEBUG}}, host="{{SERVER_HOST}}", port=12100)
     
     
     

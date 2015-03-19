@@ -5,8 +5,8 @@
 	<template id="hg-patient-select">
 		<div horizontal center-justified layout>
 			<select id="patient-list" value="{{current}}" on-change="{{selectionChanged}}">
-				<option value="{{DATA_URL}}/patient.juhan.json">Juhan</option>
-				<option value="{{DATA_URL}}/patient.ben.json">Ben</option>
+				<option value="{{DATA_URL}}patient.juhan.json">Juhan</option>
+				<option value="{{DATA_URL}}patient.ben.json">Ben</option>
 			</select>
 	    </div>
 	</template>
@@ -14,7 +14,7 @@
 		Polymer('hg-patient-select', {
 			created: function() {
 				this.pid = null;
-				this.current = "{{DATA_URL}}/patient.juhan.json";
+				this.current = "{{DATA_URL}}patient.juhan.json";
 			},
 			selectionChanged: function(e) {
 				// Make a copy of the loaded data
